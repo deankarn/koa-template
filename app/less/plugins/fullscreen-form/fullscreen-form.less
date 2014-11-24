@@ -282,7 +282,7 @@
             &.ff-next,
             &.ff-back,
             &.ff-continue {
-                position: absolute;
+                position: fixed;
                 right: 0;
                 bottom: 0;
                 margin: 0 40px 60px 0;
@@ -354,6 +354,10 @@
                 border: none;
                 position: absolute;
                 width: 100%;
+
+                &.long-content{
+                    padding-right:100px;
+                }
 
                 &.ff-current-field {
                     visibility: visible;
@@ -575,6 +579,15 @@
             width: auto;
             font-size: 2em;
 
+            & .ff-field-list {
+
+                & > li {
+
+                    &.long-content{
+                        padding-right:0;
+                    }
+                }
+            }
         }
         & .ff-controls {
 

@@ -227,7 +227,9 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
 
             this.isBusy = this.isAnimating = true
             this.nextIdx = pos
-            this.isMovingBack = this.nextIdx != undefined
+            console.log pos
+            console.log this.fields.indexOf this.currentField
+            this.isMovingBack = this.nextIdx != undefined and pos > this.fields.indexOf this.currentField
             this.isLastStep = if this.currentIdx == this.fieldsCount - 1 and not this.isMovingBack then true else false
 
             if this.nextIdx == undefined
@@ -427,6 +429,7 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
 
             if not this.currentField or this.currentField == undefined
                 callback false
+                return false
 
             # we will try to match up the validation rule based onthe field:
             # name, then id
@@ -435,6 +438,7 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
             # if no id then no validation on field
             if not id or id == undefined
                 callback true
+                return true
 
             validator = this.options.validators[id]
 
@@ -443,6 +447,7 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
             if validator == undefined
                 this._showError 'Field contains a validation ID but no validator was passed to the form!!!'
                 callback false
+                return false
 
             self = this
             results = validator this.currentField, (results) ->
