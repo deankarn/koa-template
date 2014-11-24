@@ -1,0 +1,38 @@
+{
+	"en":{
+		"login":{
+			"title": "Login",
+			"email": "Email",
+			"password": "Password",
+			"forgot": "Forgot Password",
+			"language": "Select Language"
+		}
+	},
+	"en-GB":{
+		"login":{
+			"title": "Login",
+			"email": "Email",
+			"password": "Password",
+			"forgot": "Forgot Password",
+			"language": "Select Language"
+		}
+	},
+	"fr":{
+		"login":{
+			"title": "Connexion",
+			"email": "Email",
+			"password": "mot de passe",
+			"forgot": "Mot de passe oublié",
+			"language": "Sélectionnez la langue"
+		}
+	},
+	"zh":{
+		"login":{
+			"title": "登录",
+			"email": "电子邮件",
+			"password": "密码",
+			"forgot": "选择语言",
+			"language": "忘记密码"
+		}
+	}
+}

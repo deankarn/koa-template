@@ -1,0 +1,30 @@
+{
+	"en":{
+		"signup":{
+			"title": "Sign Up",
+			"email": "Email",
+			"password": "Password"
+		}
+	},
+	"en-GB":{
+		"signup":{
+			"title": "Sign Up",
+			"email": "Email",
+			"password": "Password"
+		}
+	},
+	"fr":{
+		"signup":{
+			"title": "Signer",
+			"email": "Email",
+			"password": "mot de passe"
+		}
+	},
+	"zh":{
+		"signup":{
+			"title": "报名",
+			"email": "电子邮件",
+			"password": "密码"
+		}
+	}
+}

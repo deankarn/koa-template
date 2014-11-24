@@ -1,0 +1,43 @@
+extends /layouts/_layout
+
+block content
+    div#user-ct.ff-ct
+        div.ff-title
+            h1.ui.center.aligned.header #{title}
+        form.ff-form.block.centered.ui.form(action='/user/add', method='post', autocomplete='off')
+            input(type='hidden', name='_csrf', value=csrf)
+            ol.ff-field-list
+                li(data-validation-id="email")
+                    div.field
+                        label.ff-field-label(data-info="We won't send you spam, we promise...") #{email}
+                        div.ui.left.icon.input
+                            input(type='text', name='email', placeholder='Email', required)
+                            i.user.icon
+                li(data-dependant)
+                    div.field
+                        label.ff-field-label= password
+                        div.ui.left.icon.input
+                            input(type='password', name='password', paceholder='Password', required)
+                            i.lock.icon
+                li
+                    div.field
+                        label.ff-field-label= language
+                        div.ui.fluid.search.selection.dropdown
+                            input(type='hidden', name='locale', value=languages[0].value, required)
+                            i.dropdown.icon
+                            div.default.text #{languages[0].text}
+                            div.menu
+                                each lang in languages
+                                    if lang.value == localeString
+                                        div.item.active(data-value=lang.value)
+                                            i(class=lang.flag)
+                                            span #{lang.text}
+                                    else
+                                        div.item(data-value=lang.value)
+                                            i(class=lang.flag)
+                                            span #{lang.text}
+            div.ff-submit.fluid.ui.blue.submit.button= title
+
+block additional-js
+    script(type="text/javascript") document.addEventListener("DOMContentLoaded", function() { require(["user"], function(m){ m.initializeAdd();})});
+    //- script(type="text/javascript") require(['user'], function(m){ console.log(m); m.initializeAdd(); });

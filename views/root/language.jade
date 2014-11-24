@@ -1,0 +1,23 @@
+extends /layouts/_layout
+
+block content
+	span#language-ct
+		form.block.centered.ui.center.aligned.form.raised.segment(action='/language', method='post')
+			input(type='hidden', name='_csrf', value=csrf)
+			h1.ui.center.aligned.header #{selectLangMsg}
+			div.field
+				select#select-lang(size=10)
+					each lang in languages
+						if lang.value == localeString
+							option(value=lang.value,selected='selected')
+								i(class=lang.flag)
+								span #{lang.text}
+						else
+							option(value=lang.value)
+								i(class=lang.flag)
+								span #{lang.text}
+
+			div#submit-lang.fluid.ui.blue.submit.button= setLangMsg
+
+block additional-js
+	script(type="text/javascript") require(['language'], function(m){ m.initialize(); });

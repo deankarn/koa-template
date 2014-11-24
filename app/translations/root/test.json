@@ -1,0 +1,22 @@
+{
+	"en":{
+		"test":{
+			"title": "Test"
+		}
+	},
+	"en-GB":{
+		"test":{
+			"title": "Test"
+		}
+	},
+	"fr":{
+		"test":{
+			"title": "Test"
+		}
+	},
+	"zh":{
+		"test":{
+			"title": "测试"
+		}
+	}
+}

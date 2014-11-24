@@ -1,0 +1,22 @@
+extends /layouts/_layout
+
+block additional-css
+	!= css('app.index_view')
+
+block content
+	div#menu-ct
+		ul
+			li
+				a#home
+					i.home.icon
+					br
+					span= homeMsg
+			li
+				a(href='/logout')
+					i.sign.out.icon
+					br
+					span= logoutMsg
+	div#partial-ct
+
+block additional-js
+	!= js('app.index_view')

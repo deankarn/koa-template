@@ -1,0 +1,42 @@
+{
+    "en":{
+        "user":{
+            "add":{
+                "title": "Add User",
+                "email": "Email",
+                "password": "Password",
+                "language": "Language"
+            }
+        }
+    },
+    "en-GB":{
+        "user":{
+            "add":{
+                "title": "Add User",
+                "email": "Email",
+                "password": "Password",
+                "language": "Language"
+            }
+        }
+    },
+    "fr":{
+        "user":{
+            "add":{
+                "title": "Ajouter un utilisateur",
+                "email": "Email",
+                "password": "mot de passe",
+                "language": "langue"
+            }
+        }
+    },
+    "zh":{
+        "user":{
+            "add":{
+                "title": "添加用户",
+                "email": "电子邮件",
+                "password": "密码",
+                "language": "语言"
+            }
+        }
+    }
+}

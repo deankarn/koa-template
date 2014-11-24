@@ -1,0 +1,62 @@
+{
+    "name": "hyena",
+    "version": "0.0.1",
+    "description": "Full example using Koa, React, Passport, Mongoose, Gulp, Mocha",
+    "keywords": [
+        "koa",
+        "mongoose",
+        "mocha",
+        "gulp",
+        "passport",
+        "template"
+    ],
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/joeybloggs/hyena"
+    },
+    "scripts": {
+        "start": "gulp dev",
+        "test": "NODE_ENV=test ./node_modules/.bin/mocha --harmony --reporter spec ./test/test-*.js"
+    },
+    "author": "Dean Karn <dean.karn@gmail.com>",
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.11.14"
+    },
+    "dependencies": {
+        "co": "latest",
+        "co-bcrypt" : "latest",
+        "koa": "latest",
+        "koa-better-body" : "latest",
+        "koa-csrf" : "latest",
+        "koa-session-store" : "latest",
+        "koa-session-mongoose" : "latest",
+        "koa-error": "latest",
+        "koa-logger": "latest",
+        "koa-passport": "latest",
+        "koa-response-time": "latest",
+        "koa-router": "latest",
+        "koa-jade" : "latest",
+        "jade" : "latest",
+        "lodash": "latest",
+        "mongoose": "3.9.x",
+        "passport-local": "latest",
+        "globalize" : "latest",
+        "superagent": "latest",
+        "vinyl-source-stream": "latest",
+        "wrench" : "latest"
+    },
+    "devDependencies": {
+        "gulp": "latest",
+        "gulp-concat": "latest",
+        "gulp-less": "latest",
+        "gulp-coffee" : "latest",
+        "gulp-minify-css": "latest",
+        "gulp-nodemon": "latest",
+        "gulp-sourcemaps": "latest",
+        "mocha": "latest",
+        "should": "latest",
+        "supertest": "latest"
+    }
+}

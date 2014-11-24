@@ -1,0 +1,655 @@
+@import "base";
+@import "animations";
+
+.ff-ct {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: @ff-color;
+
+    &.ff-show-next {
+
+        & .ff-controls {
+
+            & .ff-numbers {
+
+                & .ff-number-current {
+                    .base-animation-construct(animMoveUp 0.4s both);
+
+                }
+                & .ff-number-new {
+                    .base-animation-construct(animMoveUpFromDown 0.4s both);
+                }
+            }
+
+        }
+        & .ff-form {
+
+            & .ff-field-list {
+
+                & > li {
+                    &.ff-show {
+                        .base-animation-construct(animShowNext 0.5s cubic-bezier(0.7,0,0.3,1) both 0.05s);
+                    }
+                    &.ff-hide {
+                        visibility: visible;
+                        .base-animation-construct(animHideNext 0.5s cubic-bezier(0.7,0,0.3,1) forwards);
+                    }
+                }
+            }
+        }
+
+    }
+    &.ff-show-prev {
+
+        & .ff-controls {
+
+            & .ff-numbers {
+
+                & .ff-number-current {
+                    .base-animation-construct(animMoveDown 0.4s both);
+                }
+                & .ff-number-new {
+                    .base-animation-construct(animMoveDownFromUp 0.4s both);
+                }
+            }
+
+        }
+        & .ff-form {
+
+            & .ff-field-list {
+
+                & > li {
+                    &.ff-show {
+                        .base-animation-construct(animShowPrev 0.5s cubic-bezier(0.7,0,0.3,1) both 0.05s);
+                    }
+                    &.ff-hide {
+                        visibility: visible;
+                        .base-animation-construct(animHidePrev 0.5s cubic-bezier(0.7,0,0.3,1) forwards);
+                    }
+                }
+            }
+        }
+
+    }
+    & .ff-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 40px;
+        width: 100%;
+        text-align:center;
+
+        & h1 {
+            margin: 0;
+        }
+
+    }
+    & .ff-message-success,
+    & .ff-message-error {
+        max-width: @ff-form-width;
+        position: absolute;
+        bottom: 75%;
+        left: 50%;
+        z-index: 800;
+        max-width: 960px;
+        width: 70%;
+        color: @ff-error-color;
+        font-weight: 700;
+        font-size: 1em;
+        opacity: 0;
+        -webkit-transform: translate3d(-50%,-5px,0);
+        -moz-transform: translate3d(-50%,-5px,0);
+        -ms-transform: translate3d(-50%,-5px,0);
+        -o-transform: translate3d(-50%,-5px,0);
+        transform: translate3d(-50%,-5px,0);
+
+        &.ff-show {
+            opacity: 1;
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+            -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+            -ms-transition: -ms-transform 0.3s, opacity 0.3s;
+            -o-transition: -o-transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
+            -webkit-transform: translate3d(-50%,0,0);
+            -moz-transform: translate3d(-50%,0,0);
+            -ms-transform: translate3d(-50%,0,0);
+            -o-transform: translate3d(-50%,0,0);
+            transform: translate3d(-50%,0,0);
+        }
+
+    }
+    & .ff-message-success{
+        color: @ff-success-color;
+    }
+    & button {
+        border: none;
+        background: none;
+
+    }
+    & button[disabled] {
+        opacity: 0.3;
+        pointer-events: none;
+
+    }
+    & input:focus,
+    & button:focus {
+        outline: none;
+    }
+    & .ff-controls {
+        & .ff-nav-dots {
+            position: absolute;
+            top: 50%;
+            right: 60px;
+            left: auto;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+            & button {
+                position: relative;
+                display: block;
+                padding: 0;
+                margin: 16px 0;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: transparent;
+                -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
+                -moz-transition: -moz-transform 0.3s ease, opacity 0.3s ease;
+                -ms-transition: -ms-transform 0.3s ease, opacity 0.3s ease;
+                -o-transition: -o-transform 0.3s ease, opacity 0.3s ease;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background-color: @ff-color-alpha-50;
+                    content: '';
+                    text-indent: 0;
+                    -webkit-backface-visibility: hidden;
+                    -moz-backface-visibility: hidden;
+                    -ms-backface-visibility: hidden;
+                    -o-backface-visibility: hidden;
+                    backface-visibility: hidden;
+
+                }
+                &::after {
+                    background-color: @ff-color-alpha-40;
+                    -webkit-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    -moz-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    -ms-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    -o-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    transform: perspective(1000px) rotate3d(0,1,0,180deg);
+
+                }
+                &:hover::before {
+                    // background: #fffed8;
+                    background: @ff-navdot-current;
+                }
+                &.ff-dot-current {
+                    -webkit-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    -moz-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    -ms-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    -o-transform: perspective(1000px) rotate3d(0,1,0,180deg);
+                    transform: perspective(1000px) rotate3d(0,1,0,180deg);
+
+                    &::before {
+                        background: @ff-navdot-current;
+                        border:1px solid @ff-navdot-current-border;
+                    }
+                }
+            }
+
+        }
+        & .ff-progress {
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0.5em;
+            background: @ff-progress-color;
+            -webkit-transition: width 0.3s ease-in-out;
+            -moz-transition: width 0.3s ease-in-out;
+            -ms-transition: width 0.3s ease-in-out;
+            -o-transition: width 0.3s ease-in-out;
+            transition: width 0.3s ease-in-out;
+
+        }
+        & .ff-numbers {
+            position: absolute;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            color: @ff-color-alpha-40;
+            margin: 40px;
+            width: 2em;
+            font-weight: 700;
+            font-size: 2em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            cursor: default;
+
+            &:after {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                content: '/';
+                font-weight: 300;
+                opacity: 0.4;
+                left: 0;
+
+            }
+            & span {
+                float: right;
+                width: 40%;
+                text-align: center;
+
+            }
+            & .ff-number-current {
+                float: left;
+
+            }
+            & .ff-number-new {
+                position: absolute;
+                left: 0;
+                -webkit-transform: translateY(100%);
+                -moz-transform: translateY(100%);
+                -ms-transform: translateY(100%);
+                -o-transform: translateY(100%);
+                transform: translateY(100%);
+            }
+
+        }
+        & button {
+            &.ff-next,
+            &.ff-back,
+            &.ff-submit,
+            &.ff-continue {
+                padding: 0.6em 1.5em;
+                border: 3px solid @ff-subtext-border-color;
+                border-radius: 40px;
+                font-weight: 700;
+                color: @ff-color-alpha-40;
+
+            }
+            &.ff-next,
+            &.ff-back,
+            &.ff-continue {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin: 0 40px 60px 0;
+                font-size: 1.25em;
+
+                &::after {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    line-height: 3;
+                    text-align: center;
+                    background: transparent;
+                    color: @ff-color-alpha-30;
+                    content: attr(data-subtext);
+                    font-size: 0.65em;
+                    pointer-events: none;
+                }
+
+            }
+            &.ff-submit:hover,
+            &.ff-submit:focus,
+            &.ff-continue:hover,
+            &.ff-back:hover,
+            &.ff-next:hover {
+                background: @ff-hover-background;
+                color: @ff-hover-text;
+            }
+        }
+
+    }
+    & .ff-form {
+        position: relative;
+        text-align: left;
+        font-size: 2.5em;
+        top: 32%;
+        margin: 0 auto;
+        width: @ff-form-width;
+        // width: @ff-form-max-width;
+        max-width: @ff-form-width;
+
+        &.ff-show {
+            .base-animation-construct(animFadeIn 0.5s);
+
+            & .ff-field-list {
+                .base-animation-construct(animMove 0.5s);
+            }
+
+        }
+        & .ff-submit {
+            // Won't always have one, but just in case.
+            display: none!important;
+
+        }
+        & .ff-field-list {
+
+            position: relative;
+            margin: 0 auto;
+            padding: 0;
+            top: 0;
+            list-style: none;
+
+            & > li {
+                visibility: hidden;
+                position: relative;
+                z-index: 1;
+                margin: 0;
+                padding: 0;
+                border: none;
+                position: absolute;
+                width: 100%;
+
+                &.ff-current-field {
+                    visibility: visible;
+
+                }
+                &.ff-show,
+                &.ff-hide {
+                    pointer-events: none;
+
+                }
+                // &:hover{
+                // 	z-index: 999;
+                // }
+                & label {
+                    position: relative;
+
+                    &.ff-field-label {
+                        display: inline-block;
+                        padding: 0 5px 1em 0;
+                        font-weight: 700;
+                        pointer-events: none;
+
+                    }
+                    &[data-info] {
+                        &::after {
+                            position: relative;
+                            display: inline-block;
+                            margin-left: 10px;
+                            width: 24px;
+                            height: 24px;
+                            border: 2px solid @ff-color-alpha-40;
+                            color: @ff-color-alpha-40;
+                            border-radius: 50%;
+                            content: 'i';
+                            vertical-align: top;
+                            text-align: center;
+                            font-weight: 700;
+                            font-style: italic;
+                            font-size: 14px;
+                            font-family: Georgia, serif;
+                            line-height: 20px;
+                            cursor: pointer;
+                            pointer-events: auto;
+
+                        }
+                        &::before {
+                            position: absolute;
+                            bottom: 100%;
+                            left: 0;
+                            padding: 0 0 10px;
+                            min-width: 320px;
+                            content: attr(data-info);
+                            font-size: 0.4em;
+                            color: @ff-color-alpha-40;
+                            opacity: 0;
+                            -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+                            -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+                            -ms-transition: opacity 0.3s, -ms-transform 0.3s;
+                            -o-transition: opacity 0.3s, -o-transform 0.3s;
+                            transition: opacity 0.3s, transform 0.3s;
+                            -webkit-transform: translate3d(0,-5px,0);
+                            -moz-transform: translate3d(0,-5px,0);
+                            -ms-transform: translate3d(0,-5px,0);
+                            -o-transform: translate3d(0,-5px,0);
+                            transform: translate3d(0,-5px,0);
+                            pointer-events: none;
+
+                        }
+                        &:hover::before {
+                            opacity: 1;
+                            -webkit-transform: translate3d(0,0,0);
+                            -moz-transform: translate3d(0,0,0);
+                            -ms-transform: translate3d(0,0,0);
+                            -o-transform: translate3d(0,0,0);
+                            transform: translate3d(0,0,0);
+                        }
+                    }
+
+                }
+                & label:hover ~ .ff-info,
+                & .ff-info:hover {
+                    opacity: 1;
+                    -webkit-transform: translateY(0);
+                    -moz-transform: translateY(0);
+                    -ms-transform: translateY(0);
+                    -o-transform: translateY(0);
+                    transform: translateY(0);
+                    pointer-events: auto;
+
+                }
+                & input {
+                    display: block;
+                    margin: 0;
+                    padding: 0 0 0.15em;
+                    width: 100%;
+                    border: none;
+                    border-bottom: 2px solid @ff-color-alpha-20;
+                    background-color: transparent;
+                    color: @ff-focus-text;
+                    text-overflow: ellipsis;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    border-radius: 0;
+
+                    &:invalid {
+                        box-shadow: none;
+                        /* removes red shadow in FF*/
+
+                    }
+                    &:focus {
+                        outline: none;
+                        background-color: @ff-input-background;
+                        /* Fixes chrome bug with placeholder */
+                        &::-webkit-input-placeholder {
+                            color: transparent;
+                        }
+
+                    }
+                    &[type="radio"]:focus + label::after,
+                    &[type="radio"]:checked + label::after {
+                        opacity: 1;
+
+                    }
+                    &.ff-mark {
+                        padding-left: 1em;
+                        background-image: url("../images/dollar.svg");
+                        background-position: 0 0.15em;
+                        background-size: auto 75%;
+                        background-repeat: no-repeat;
+
+                        &[required] {
+                            background-image: url(../images/dollar.svg), url("../images/abacusstar.svg");
+                            background-position: 0 0.15em, top right;
+                            background-size: auto 75%, 18px;
+                            background-repeat: no-repeat;
+                        }
+
+                    }
+                    &::-webkit-input-placeholder,
+                    &::-moz-input-placeholder,
+                    &::-ms-input-placeholder,
+                    &::-o-input-placeholder {
+                        color: @ff-color-alpha-10;
+                    }
+
+                }
+                & textarea {
+                    padding: 0.25em;
+                    width: 100%;
+                    height: 200px;
+                    border: 2px solid @ff-color-alpha-20;
+                    background-color: transparent;
+                    color: @ff-focus-text;
+                    font-weight: 700;
+                    font-size: 0.85em;
+                    resize: none;
+
+                    &:focus {
+                        outline: none;
+                        background-color: @ff-input-background;
+                    }
+                    &::-webkit-input-placeholder,
+                    &::-moz-input-placeholder,
+                    &::-ms-input-placeholder,
+                    &::-o-input-placeholder {
+                        color: @ff-color-alpha-10;
+                    }
+                }
+
+            }
+            & [required] {
+                background-image: url("../images/abacusstar.svg");
+                background-position: top right;
+                background-size: 18px;
+                background-repeat: no-repeat;
+            }
+        }
+
+    }
+    /* Remove IE clear cross */
+    & input[type=text]::-ms-clear {
+        display: none;
+
+    }
+    & .ff-nav-dots,
+    & .ff-progress,
+    & .ff-numbers,
+    & .ff-continue,
+    & .ff-next,
+    & .ff-back,
+    & .ff-message-error,
+    & .ff-message-success,
+    & .ff-message-final {
+        visibility: hidden;
+
+    }
+    & .ff-show {
+        visibility: visible !important;
+    }
+
+}
+@media screen and (max-width: 52.5em) {
+    body {
+        min-height: 500px;
+
+    }
+    .ff-ct {
+        font-size: 70%;
+
+        & .ff-title {
+            padding: 20px;
+
+        }
+        & .ff-form {
+            top: 6em;
+            right: 2em;
+            left: 0;
+            padding: 0 3.75em 0 1em;
+            width: auto;
+            font-size: 2em;
+
+        }
+        & .ff-controls {
+
+            & .ff-numbers {
+                margin: 20px;
+
+            }
+            & .ff-nav-dots {
+                right: 25px;
+
+            }
+            & button {
+                &.ff-back,
+                &.ff-next,
+                &.ff-continue {
+                    right: 20px;
+                    bottom: 20px;
+                    margin: 0;
+                    padding: 50px 0 0 50px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    font-size: 2em;
+
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        content: '\27A1';
+                        text-align: center;
+                        font-size: 1em;
+                        line-height: 50px;
+
+                    }
+                    &::after {
+                        content: '';
+                    }
+
+                }
+                &.ff-back
+                {
+                    &::before{
+                        content: '\2B05';
+                    }
+                }
+                &.ff-submit {
+                    width: 100%;
+                    font-size: 1.25em;
+                }
+            }
+
+        }
+        & .ff-message-success,
+        & .ff-message-error {
+            bottom: 1.75em;
+            left: 0;
+            padding: 0 90px 0 2em;
+            width: 100%;
+            font-size: 1.5em;
+            -webkit-transform: translate3d(0,-5px,0);
+            -moz-transform: translate3d(0,-5px,0);
+            -ms-transform: translate3d(0,-5px,0);
+            -o-transform: translate3d(0,-5px,0);
+            transform: translate3d(0,-5px,0);
+
+            &.ff-show {
+                -webkit-transform: translate3d(0,0,0);
+                -moz-transform: translate3d(0,0,0);
+                -ms-transform: translate3d(0,0,0);
+                -o-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+        }
+    }
+
+}

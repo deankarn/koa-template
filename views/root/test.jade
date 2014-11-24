@@ -1,0 +1,21 @@
+extends /layouts/_layout
+
+block content
+	h1= title
+	br
+	button#load-partials.ui.button(type='button') Load Partial View
+	br
+	div.ui.dropdown
+		div.text Select
+		i.dropdown.icon
+		div.menu
+			div.item Edit
+			div.item Remove
+			div.item Hide
+	br
+	div#partial-content
+
+
+block additional-js
+	script(type="text/javascript") document.addEventListener("DOMContentLoaded", function() { require(["test"], function(m){ m.initialize();})});
+	//- script(type="text/javascript") require(['test'], function(tp){ tp.initialize(); });

@@ -1,0 +1,41 @@
+extends /layouts/_layout
+
+block content
+	span#login-ct
+		form.block.centered.ui.form.raised.segment(action='/login', method='post')
+			input(type='hidden', name='_csrf', value=csrf)
+			h1.ui.center.aligned.header #{title}
+			image.login-avatar.block.centered.circular.ui.image(src='/static/images/avatar.jpg', align='middle')
+			div.field
+				input#utc-offset(type='hidden', name='utc-offset')
+			div.field
+				label= email
+				div.ui.left.icon.corner.labled.input
+					input(type='text', name='email', palceholder='Email', autofocus)
+					i.user.icon
+					div.ui.corner.label
+						i.icon.asterisk
+			div.field
+				label= password
+				div.ui.left.icon.corner.labled.input
+					input(type='password', name='password', paceholder='Password')
+					i.lock.icon
+					div.ui.corner.label
+						i.icon.asterisk
+			div.fluid.ui.blue.submit.button= title
+			div.ui.clearing.divider
+			table.ui.table
+				tbody
+					tr
+						td
+
+							a.ui.basic.button(href='/password-recovery') #{forgot}
+						td
+							a.ui.basic.button(href='/language') #{language}
+
+block additional-js
+	script(type="text/javascript") document.addEventListener("DOMContentLoaded", function() { require(["login"], function(l){ l.initialize();})});
+	//- script(type="text/javascript") define(["login"], function(login){ alert('here'); console.log(login); });
+	//- script(src='/static/bundled/login.js')
+	//- script(type="text/javascript") include(["/static/bundled/login"], function(m){ console.log(m); });
+	//- script(type="text/javascript") requirejs(['login'], function(m){ m.initialize(); });

@@ -1,0 +1,30 @@
+{
+	"en":{
+		"language":{
+			"title": "Language",
+			"selectLangMsg": "Select Language",
+			"setLangMsg": "Set Language"
+		}
+	},
+	"en-GB":{
+		"language":{
+			"title": "Language",
+			"selectLangMsg": "Select Language",
+			"setLangMsg": "Set Language"
+		}
+	},
+	"fr":{
+		"language":{
+			"title": "langue",
+			"selectLangMsg": "Sélectionnez la langue",
+			"setLangMsg": "Définir la langue"
+		}
+	},
+	"zh":{
+		"language":{
+			"title": "语言",
+			"selectLangMsg": "选择语言",
+			"setLangMsg": "设置语言"
+		}
+	}
+}

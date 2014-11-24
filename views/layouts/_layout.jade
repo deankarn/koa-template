@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title= title
+        link(rel='stylesheet', href='/static/bundled/style.css')
+        block additional-css
+    body
+        block content
+
+    //- script(src='/static/js/require.js', data-main='/static/bundled/main')
+    script(src='/static/bundled/jquery.js')
+    //- script(src='/static/bundled/semanticui.js')
+    script(src='/static/bundled/tinyrequire.min.js', data-main='/static/bundled/main.js')
+    //- script(src='/static/bundled/include.js')
+    //- script(src='/static/bundled/main.js')
+    block additional-js

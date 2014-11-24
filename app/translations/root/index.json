@@ -1,0 +1,30 @@
+{
+	"en":{
+		"index":{
+			"title"    : "Home",
+			"homeMsg"  : "Home",
+			"logoutMsg": "Logout"
+		}
+	},
+	"en-GB":{
+		"index":{
+			"title": "Home",
+			"homeMsg"  : "Home",
+			"logoutMsg": "Logout"
+		}
+	},
+	"fr":{
+		"index":{
+			"title": "Maison",
+			"homeMsg"  : "Maison",
+			"logoutMsg": "Déconnexion"
+		}
+	},
+	"zh":{
+		"index":{
+			"title": "首页",
+			"homeMsg"  : "首页",
+			"logoutMsg": "注销"
+		}
+	}
+}

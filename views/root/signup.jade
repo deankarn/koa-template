@@ -1,0 +1,27 @@
+extends /layouts/_layout
+
+	block content
+		span#user-ct
+			form.block.centered.ui.form.raised.segment(action='/user/add', method='post')
+				input(type='hidden', name='_csrf', value=csrf)
+				h1.ui.center.aligned.header #{title}
+				div.field
+					input#utc-offset(type='hidden', name='utc-offset')
+				div.field
+					label= email
+					div.ui.left.labeled.icon.input
+						input(type='text', name='email', palceholder='Email', autofocus)
+						i.user.icon
+						div.ui.corner.label
+							i.icon.asterisk
+				div.field
+					label= password
+					div.ui.left.labeled.icon.input
+						input(type='password', name='password', paceholder='Password')
+						i.lock.icon
+						div.ui.corner.label
+							i.icon.asterisk
+				div.fluid.ui.blue.submit.button= title
+
+	block additional-js
+		script(type="text/javascript") require(['user'], function(m){ m.initialize(); });

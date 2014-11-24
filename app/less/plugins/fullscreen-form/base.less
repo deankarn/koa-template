@@ -1,0 +1,28 @@
+// Base Colours
+@ff-color:#000;
+@ff-subtext-color: @ff-color;
+@ff-error-color:#eb7e7f;
+@ff-success-color:#0dc020;
+@ff-navdot-current: #ffc978;
+@ff-progress-color: @ff-navdot-current;
+@ff-focus-text: lighten(@ff-color, 20%);
+@ff-input-background:transparent;
+
+// Manipulated Base Colours
+@ff-color-alpha-10: fade(@ff-subtext-color, 10%);
+@ff-color-alpha-20: fade(@ff-subtext-color, 20%);
+@ff-color-alpha-30: fade(@ff-subtext-color, 30%);
+@ff-color-alpha-40: fade(@ff-subtext-color, 40%);
+@ff-color-alpha-50: fade(@ff-subtext-color, 50%);
+
+@ff-subtext-border-color: lighten(@ff-color, 30%);
+
+@ff-hover-background: lighten(@ff-color, 15%);
+@ff-hover-text: lighten(@ff-hover-background, 100%);
+
+@ff-navdot-current-border: darken(@ff-navdot-current, 10%);
+
+@ff-focus-background: lighten(@ff-focus-text, 70%);
+
+// Base Values
+@ff-form-width: 80%;

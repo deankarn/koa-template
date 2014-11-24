@@ -1,0 +1,22 @@
+{
+	"en":{
+		"dashboard":{
+			"title"    : "Dashboard"
+		}
+	},
+	"en-GB":{
+		"dashboard":{
+			"title": "Dashboard"
+		}
+	},
+	"fr":{
+		"dashboard":{
+			"title": "tableau de bord"
+		}
+	},
+	"zh":{
+		"dashboard":{
+			"title": "仪表板"
+		}
+	}
+}

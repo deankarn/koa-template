@@ -1,0 +1,8 @@
+extends /layouts/_layout
+
+block content
+	h1= title
+	div
+		p #{user.id}
+		p #{user.local.email}
+		p #{user.local.password}

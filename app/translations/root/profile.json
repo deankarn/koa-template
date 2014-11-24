@@ -1,0 +1,22 @@
+{
+	"en":{
+		"profile":{
+			"title": "Profile"
+		}
+	},
+	"en-GB":{
+		"profile":{
+			"title": "Profile"
+		}
+	},
+	"fr":{
+		"profile":{
+			"title": "Profil"
+		}
+	},
+	"zh":{
+		"profile":{
+			"title": "简介"
+		}
+	}
+}

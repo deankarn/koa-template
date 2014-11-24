@@ -1,0 +1,19 @@
+span#test-partial
+
+	p This is partial loaded via ajax
+
+	button.ui.button(type='button') Partial Buttons
+
+	br
+	div.ui.dropdown
+		div.text Select
+		i.dropdown.icon
+		div.menu
+			div.item Edit
+			div.item Remove
+			div.item Hide
+	br
+
+script(type="text/javascript") require(["test-partial"], function(m){ m.initialize();});
+//- script(type="text/javascript") require(['test-partial'], function(tp){ tp.initialize(); });
+//- //!= js('app.test_partial')
