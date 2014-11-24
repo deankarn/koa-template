@@ -52,9 +52,10 @@ function AuthLocalUser(req, email, password, done) {
 			return null;
 		}
 	})
-	.then(function(user){
-		return done(null, user);
-	});
+	.then(done.bind(null, null), done);
+	// .then(function(user){
+	// 	return done(null, user);
+	// });
 };
 
 module.exports = function (passport, config)

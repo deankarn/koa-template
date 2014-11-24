@@ -428,6 +428,13 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
                 callback false
                 return false
 
+            # if moving back, allow validation to pass in case in case the current
+            # field is dependant data and could get stuff on failing validation
+            # when trying to go fix the needed data
+            if this.isMovingBack
+                callback true
+                return true
+
             # we will try to match up the validation rule based onthe field:
             # name, then id
             id = this.currentField.getAttribute "data-validation-id"
