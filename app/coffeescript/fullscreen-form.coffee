@@ -161,7 +161,6 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
 
             # show next field
             this.ctrlContinue.addEventListener 'click', (e) ->
-                console.log 'clicked continue'
                 self._nextField()
                 true
 
@@ -227,9 +226,7 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
 
             this.isBusy = this.isAnimating = true
             this.nextIdx = pos
-            console.log pos
-            console.log this.fields.indexOf this.currentField
-            this.isMovingBack = this.nextIdx != undefined and pos > this.fields.indexOf this.currentField
+            this.isMovingBack = this.nextIdx != undefined and pos < this.fields.indexOf this.currentField
             this.isLastStep = if this.currentIdx == this.fieldsCount - 1 and not this.isMovingBack then true else false
 
             if this.nextIdx == undefined

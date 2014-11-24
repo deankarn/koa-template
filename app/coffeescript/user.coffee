@@ -8,7 +8,7 @@ define "user", ["main", "fullscreen-form"], (main, FullscreenForm) ->
         rules = {
             "email": (fieldCt, callback) ->
                 email = document.getElementsByName('email')[0];
-                console.log email.value.length
+                # console.log email.value.length
 
                 results = {}
 
