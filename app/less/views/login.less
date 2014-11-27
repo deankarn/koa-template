@@ -1,25 +1,113 @@
-// #login-form
-// {
-//     max-width:320px;
-//     margin-top:35px;
-// }
 
-//
-// #avatar
-// {
-//     width:130px;
-// }
+/*****************************
+  Variables
+*****************************/
 
-#login-ct
-{
-    & form
-    {
-        max-width:320px;
-        margin-top:35px;
-    }
+@footerBgColor: #202020; // Footer Background Color
+@footerColor: #ECF0F1; // Different shade of grey (from 50 shades available) lol :)
+@blue: #4183D7;
+@black: #22313F;
 
-    & .login-avatar
-    {
-        width:130px;
-    }
+.blur{
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -ms-filter: blur(4px);
+  -o-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.wrapper-zoom{
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+}
+
+
+.vertical-padding{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.horizontal-padding{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  .horizontal-padding;
+}
+
+
+
+
+/******************************
+Background
+*******************************/
+.login-background{
+  height: 100vh;
+  background-image: url("/static/images/sampleimage.jpg");
+  background-repeat:no-repeat;
+}
+
+
+/******************************
+Login Panel
+*******************************/
+
+.loginPanel{
+  border: none;
+  text-align: center;
+  background: transparent;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -170px;
+  margin-left: -227.50px;
+  padding: 0px;
+  width: 455px;
+}
+
+.panel-login-fieldSet{
+  .loginPanel;
+}
+
+
+/******************************
+Footer
+******************************/
+
+.wrapper-footer{
+  .horizontal-padding;
+  width: auto;
+}
+
+.footer{
+  position:fixed;
+  bottom: 0;
+  .vertical-padding();
+  width: 100%;
+  background: @footerBgColor;
+  border: none;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+  color: @footerColor;
+  font-weight: normal;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.title-font{
+  font-size: 40px;
+  font-weight: 700;
+  color: @black;
 }

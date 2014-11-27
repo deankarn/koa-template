@@ -18,31 +18,31 @@ var specific = {
     development: {
         app: {
             port: 3000,
-            name: 'Hyena - Dev',
+            name: 'koa-Dev',
             keys: ['ISwearByMyPrettyFloralBonnetIWillEndYou']
         },
         mongo: {
-            url: 'mongodb://mongodbtestuser:kJUMWqmMFs9Hk9z3bAYUtwR@127.0.0.1:27017/nodejs_templatev1',
+            url: 'mongodb://anthony:root@127.0.0.1:27017/koa-Dev',
         }
     },
     test: {
         app: {
             port: 3001,
-            name: 'Hyena - Test realm',
+            name: 'koa-Test',
             keys: ['ISwearByMyPrettyFloralBonnetIWillEndYou']
         },
         mongo: {
-            url: 'mongodb://mongodbtestuser:kJUMWqmMFs9Hk9z3bAYUtwR@127.0.0.1:27017/nodejs_templatev1',
+            url: 'mongodb://mongodbtestuser:kJUMWqmMFs9Hk9z3bAYUtwR@127.0.0.1:27017/koa-Test',
         }
     },
     production: {
         app: {
             port: process.env.PORT || 3000,
-            name: 'Hyena',
+            name: 'koa-Prod',
             keys: ['ISwearByMyPrettyFloralBonnetIWillEndYou']
         },
         mongo: {
-            url: 'mongodb://mongodbtestuser:kJUMWqmMFs9Hk9z3bAYUtwR@127.0.0.1:27017/nodejs_templatev1',
+            url: 'mongodb://mongodbtestuser:kJUMWqmMFs9Hk9z3bAYUtwR@127.0.0.1:27017/koa-Prod',
         }
     }
 };

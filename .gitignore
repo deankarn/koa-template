@@ -28,3 +28,6 @@ nbproject
 node_modules/
 
 !node_modules/app/*
+
+# Ignore database config
+app/config/config.js
