@@ -9,11 +9,22 @@
 @black: #22313F;
 
 .blur{
-  -webkit-filter: blur(4px);
-  -moz-filter: blur(4px);
-  -ms-filter: blur(4px);
-  -o-filter: blur(4px);
-  filter: blur(4px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  /* filter: url(#blur-effect-1); */
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+  zoom: 1;
+}
+
+.gaussian-blur{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .wrapper-zoom{
@@ -55,6 +66,7 @@ Background
   height: 100vh;
   background-image: url("/static/images/sampleimage.jpg");
   background-repeat:no-repeat;
+  background-position: top;
 }
 
 
@@ -87,6 +99,14 @@ Footer
 .wrapper-footer{
   .horizontal-padding;
   width: auto;
+}
+
+#blur-bg {
+
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  filter: url('/static/images/blur.svg#blur'); /* for Firefox */
 }
 
 .footer{
