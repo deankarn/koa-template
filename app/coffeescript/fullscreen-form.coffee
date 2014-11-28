@@ -65,7 +65,7 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
 
         _init: () ->
             # the form element
-            this.formEl = this.el.querySelector( 'form.ff-form' )
+            this.formEl = this.el.querySelector( '.ff-form' )
 
             # list of fields
             this.fieldsList = this.formEl.querySelector( 'ol.ff-field-list' )
@@ -104,7 +104,9 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
             # continue button (jump to next field)
             this.ctrlContinue = common.createElement( 'button', { cName : 'ff-continue', inner : this.options.ctrlContinueText, appendTo : this.ctrls } )
             this.ctrlContinue.setAttribute('data-subtext', this.options.ctrlContinueSubtext);
-            this._showCtrl this.ctrlContinue
+
+            if not this.currentField.hasAttribute 'data-hide-continue'
+                this._showCtrl this.ctrlContinue
 
             # final error or success buttons
             this.ctrlBack = common.createElement( 'button', { cName : 'ff-back', inner : this.options.ctrlBackText, appendTo : this.ctrls } )

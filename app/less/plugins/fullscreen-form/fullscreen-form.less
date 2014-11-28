@@ -1,6 +1,8 @@
 @import "base";
 @import "animations";
-
+.back-icon::before{
+    content: '\2B05';
+}
 .ff-ct {
     position: relative;
     width: 100%;
@@ -79,12 +81,35 @@
         margin: 0;
         padding: 40px;
         width: 100%;
-        text-align:center;
+        // text-align:center;
 
         & h1 {
             margin: 0;
         }
 
+        & .ff-header-actions{
+            & a{
+                padding: 0 0.25em;
+                display: inline-block;
+                text-decoration: none;
+                font-size: 1.2em;
+                outline: none;
+
+                & span{
+                    display: none;
+                    position: absolute;
+                    font-size: 0.85em;
+                    padding: 0.5em 0 0 0.25em;
+                    font-weight: 700;
+                }
+
+                &:hover{
+                    & span{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
     }
     & .ff-message-success,
     & .ff-message-error {
