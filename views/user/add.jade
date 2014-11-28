@@ -3,7 +3,10 @@ extends /layouts/_layout
 block content
     div#user-ct.ff-ct
         div.ff-title
-            h1.ui.center.aligned.header #{title}
+            h1.ui.header #{title}
+            div.ff-header-actions
+                a(class="back-icon", href='#')
+                    span Back To DashBoard
         form.ff-form.block.centered.ui.form(action='/user/add', method='post', autocomplete='off')
             input(type='hidden', name='_csrf', value=csrf)
             ol.ff-field-list
