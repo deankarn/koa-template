@@ -23,8 +23,13 @@ block content
 
                     div.fluid.ui.primary.large.submit.button Sign In
                     div.ui.clearing.divider
-
-
+                    
+                    div.ui.grid.two.column
+                      div.column.left.floated.right.aligned
+                        a.ui.basic.button(href='/password-recovery') #{forgot}
+                      div.column.right.floated.left.aligned
+                        a.ui.basic.button(href='/language') #{language}
+                  
                     input(type='hidden', name='_csrf', value=csrf)
             div#blur-bg
     footer.footer
@@ -35,6 +40,7 @@ block content
             ul
                 each item in list
                     li=item
+                  
 block additional-js
     script(type="text/javascript") document.addEventListener("DOMContentLoaded", function() { require(["login"], function(l){ l.initialize();})});
     //- script(type="text/javascript") define(["login"], function(login){ alert('here'); console.log(login); });
