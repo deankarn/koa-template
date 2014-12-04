@@ -1,8 +1,6 @@
 @import "base";
 @import "animations";
-.back-icon::before{
-    content: '\2B05';
-}
+
 .ff-ct {
     position: relative;
     width: 100%;
@@ -105,7 +103,7 @@
 
                 &:hover{
                     & span{
-                        display: inline-block;
+                        display: block;
                     }
                 }
             }
@@ -583,11 +581,20 @@
         visibility: visible !important;
     }
 
+    & .back-icon
+    {
+        color:@ff-color;
+
+        &::before
+        {
+            content: '\2B05';
+        }
+    }
+
 }
 @media screen and (max-width: 52.5em) {
     body {
         min-height: 500px;
-
     }
     .ff-ct {
         font-size: 70%;

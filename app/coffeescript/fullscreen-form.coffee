@@ -370,8 +370,10 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
                     switch type
                         when 'radio', 'checkbox', 'button'
                             el.focus()
-                        when 'text', 'textarea', 'password'
+                        when 'text', 'password'
                             el.select()
+                when 'textarea'
+                    el.select()
             true
 
         _showField: (pos)->
