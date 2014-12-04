@@ -462,6 +462,7 @@ define "fullscreen-form", ["main", "common"], (main, common) ->
                 if results.error
                     self._showError results.message
                     callback(false)
+                    self._focusOnCurrentFieldInput()
                     false
                 else
                     callback(true)
